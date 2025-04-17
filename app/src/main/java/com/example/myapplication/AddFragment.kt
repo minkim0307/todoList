@@ -25,7 +25,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         binding.btnSave.setOnClickListener {
             val text = binding.addEditView.text.toString()
             if (text.isNotBlank()) {
-                (activity as? OnAddItemListener)?.onItemAdd(text) // Activity에 전달
+                (activity as? OnAddItemListener)?.onItemAdd(text) // 아이템 추가
                 requireActivity().supportFragmentManager.popBackStack() // 프래그먼트 뒤로가기
             } else {
                 Toast.makeText(context, "내용을 입력하세요.", Toast.LENGTH_SHORT).show()
